@@ -1,258 +1,579 @@
-@import url("https://fonts.googleapis.com/css?family=Varela+Round");
-@GAP: 15px;
-@WHITE: #fbfbfb;
-@BACKGROUND: #45494e;
-@COLOR1: #fda085;
-@COLOR1g: #f6d365;
-@COLOR2: #bff098;
-@COLOR2g: #6fd6ff;
-@COLOR3: #ea8d8d;
-@COLOR3g: #a890fe;
-@COLOR4: #d8b5ff;
-@COLOR4g: #1eae98;
-@COLOR5: #c6ea8d;
-@COLOR5g: #fe90af;
-
-* {
-  box-sizing: border-box;
+ /* * {
+	 box-sizing: border-box;
+   background-color: gray;
 }
-
-:root {
-  --accent-color: @BACKGROUND;
-  --gradient-color: @WHITE;
+ :root {
+	 --accent-color: #45494e;
+	 --gradient-color: #fbfbfb;
 }
+ a:focus {
+	 outline: none;
+	 position: relative;
+}
+ a:focus:after {
+	 width: 50px;
+}
+ a:after {
+	 content: "";
+	 background: #fbfbfb;
+	 position: absolute;
+	 bottom: 5px;
+	 left: 15px;
+	 height: 3px;
+	 width: 0;
+	 transition: 0.5s;
+	 transition-delay: 0.2s;
+}
+ body {
+	 background: #45494e;
+	 font-family: "Varela Round", Nunito, Montserrat, sans-serif;
+	 margin: 0;
+	 padding: 0;
+	 text-transform: capitalize;
+}
+ .menu {
+	 margin: 15px;
+}
+ .menu > ol {
+	 list-style: none;
+	 margin: 30px 0;
+	 padding: 0;
+}
+ .menu > ol > li {
+	 background: #3c3c3c;
+	 border-left: 5px solid var(--gradient-color);
+	 margin-bottom: 1px;
+	 position: relative;
+	 transition: 0.5s;
+}
+ .menu > ol > li:nth-child(1) {
+	 --accent-color: #fda085;
+	 --gradient-color: #f6d365;
+}
+ .menu > ol > li:nth-child(2) {
+	 --accent-color: #bff098;
+	 --gradient-color: #6fd6ff;
+}
+ .menu > ol > li:nth-child(3) {
+	 --accent-color: #ea8d8d;
+	 --gradient-color: #a890fe;
+}
+ .menu > ol > li:nth-child(4) {
+	 --accent-color: #d8b5ff;
+	 --gradient-color: #1eae98;
+}
+ .menu > ol > li:nth-child(5) {
+	 --accent-color: #c6ea8d;
+	 --gradient-color: #fe90af;
+}
+ .menu > ol > li a {
+	 color: #fbfbfb;
+	 display: block;
+	 padding: 15px;
+	 position: relative;
+	 text-decoration: none;
+	 z-index: 1;
+}
+ .menu > ol > li a:not(:last-child):before {
+	 content: "\f078";
+	 font-family: fontAwesome;
+	 font-size: 0.75em;
+	 line-height: 50px;
+	 position: absolute;
+	 right: 25px;
+	 top: 0;
+	 bottom: 0;
+	 margin: auto;
+	 transition: 0.5s;
+}
+ .menu > ol > li:focus, .menu > ol > li:focus-within, .menu > ol > li:hover {
+	 z-index: 100;
+}
+ .menu > ol > li:focus:after, .menu > ol > li:focus-within:after, .menu > ol > li:hover:after {
+	 background: linear-gradient(to left,var(--accent-color),var(--gradient-color));
+	 max-width: 800px;
+}
+ .menu > ol > li:focus .sub-menu-menu, .menu > ol > li:focus-within .sub-menu-menu {
+	 max-height: 500px;
+}
+ .menu > ol > li:focus a:before, .menu > ol > li:focus-within a:before {
+	 transform: rotate(-180deg);
+}
+ .menu > ol > li:after {
+	 background: #3c3c3c;
+	 content: "";
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 top: 0;
+	 bottom: 0;
+	 transition: 0.5s;
+	 max-width: 0;
+	 overflow: hidden;
+}
+ .menu > ol .sub-menu-menu {
+	 border-left: 1px solid #fbfbfb;
+	 margin-left: 22.5px;
+	 list-style: none;
+	 max-height: 0px;
+	 overflow: hidden;
+	 padding-left: 7.5px;
+	 position: relative;
+	 transition: 0.5s;
+	 z-index: 1;
+}
+ .menu > ol .sub-menu-menu li {
+	 font-size: 0.9em;
+}
+ .menu > ol .sub-menu-menu li:hover, .menu > ol .sub-menu-menu li a:focus {
+	 background: rgba(60,60,60,0.3);
+}
+ .menu > ol .sub-menu-menu li a:after {
+	 bottom: 5px;
+	 height: 1px;
+}
+ .menu > ol .sub-menu-menu li a:hover:after, .menu > ol .sub-menu-menu li a:focus:after {
+	 width: 15px;
+}
+ @media (min-width: 600px) {
+	 a:focus, a:hover {
+		 position: relative;
+	}
+	 a:focus:after, a:hover:after {
+		 width: 50px;
+	}
+	 a:after {
+		 left: 0;
+		 right: 0;
+		 margin: auto;
+	}
+	 .menu {
+		 margin: 0;
 
-a:focus {
-  outline: none;
+	}
+	 .menu > ol {
+		 display: block;
+		 max-width: none;
+		 text-align: center;
+	}
+	 .menu > ol > li {
+		 border-top: 5px solid var(--accent-color);
+		 border-left: 0;
+		 display: inline-block;
+		 margin-left: -5px;
+		 vertical-align: top;
+		 width: 120px;
+	}
+	 .menu > ol > li:hover:after, .menu > ol > li:focus:after, .menu > ol > li:focus-within:after {
+		 background: linear-gradient(to bottom,var(--accent-color),var(--gradient-color));
+		 border-radius: 3px;
+		 top: -15px;
+		 bottom: -15px;
+		 left: -15px;
+		 right: -15px;
+	}
+	 .menu > ol > li:hover .sub-menu-menu, .menu > ol > li:focus .sub-menu-menu, .menu > ol > li:focus-within .sub-menu-menu {
+		 max-height: 750px;
+	}
+	 .menu > ol > li a:not(:last-child):before {
+		 right: 12.5px;
+	}
+	 .menu > ol > li:hover a:before {
+		 transform: rotate(-180deg);
+	}
+	 .menu > ol .sub-menu-menu {
+		 border-left: 0;
+		 margin: 15px -15px -15px;
+		 padding-left: 0;
+	}
+}
+ @media (min-width: 775px) {
+	 .menu > ol > li {
+		 width: 150px;
+	}
+	 .menu > ol > li a:not(:last-child):before {
+		 right: 25px;
+	}
+}
+            <div className="lowbar-menu-container">
+              <div className="lowbar-menu">
+                <nav className="menu">
+                  <ol>
+                    <li className="menu-item"><a href="/">Home</a></li>
+                    <li className="menu-item">
+                      <a href="/products/all">PRODUCTS</a>
+                      <ol className="sub-menu-menu">
+                        <li><a href="/products/roses">ROSES</a></li>
+                        <li><a href="/products/ftdexclusives">FTD EXCLUSIVES</a></li>
+                        <li><a href="/products/plants">PLANTS</a></li>
+                        <li><a href="/products/bestsellers">BEST SELLERS</a></li>
+                        <li><a href="/products/corporategifts">CORPORATE GIFTS</a></li>
+                        <li><a href="/products/gourmetbaskets">GOURMET BASKETS</a></li>
+                      </ol>
+                    </li>
+                    <li className="menu-item">
+                      <a href="/occasions/all">OCCASIONS</a>
+                      <ol className="sub-menu-menu">
+                        <li><a href="/occasions/anniversary">ANNIVERSARY</a></li>
+                        <li><a href="/occasions/birthday">BIRTHDAY</a></li>
+                        <li><a href="/occasions/loveandromance">LOVE & ROMANCE</a></li>
+                        <li><a href="/occasions/newbaby">NEW BABY</a></li>
+                        <li><a href="/occasions/congratulations">CONGRATULATIONS</a></li>
+                        <li><a href="/occasions/thanks">THANKS</a></li>
+                        <li><a href="/occasions/getwell">GET WELL</a></li>
+                        <li><a href="/occasions/sympathy">SYMPATHY</a></li>
+                        <li><a href="/occasions/wedding">WEDDING</a></li>
+                        <li><a href="/occasions/summber">SUMMER</a></li>
+                        <li><a href="/occasions/graduations">GRADUATIONS</a></li>
+                      </ol>
+                    </li>
+                    <li className="menu-item">
+                      <a href="/about/aboutus">ABOUT US</a>
+                      <ol className="sub-menu-menu">
+                        <li><a href="/about/aboutus">ABOUT US</a></li>
+                        <li><a href="/about/flowers">ABOUT FLOWERS</a></li>
+                        <li><a href="/about/contactus">CONTACT US</a></li>
+                        <li><a href="/about/deliveryinfo">DELIVERY INFO</a></li>
+                        <li><a href="/about/ourguarantee">OUR GUARANTEE</a></li>
+                      </ol>
+                    </li>                  
+                  </ol>
+                </nav>
+              </div>
+            </div> */
+
+/* nav.primary-navigation {
+  margin: 0 auto;
+  display: block;
+  padding: 5px 0 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+nav.primary-navigation ul li {
+  list-style: none;
+  margin: 0 auto;
+  border-left: 2px solid #3ca0e7;
+  display: inline-block;
+  padding: 0 30px;
   position: relative;
-  &:after {
-    width: 50px;
-  }
+  text-decoration: none;
+  text-align: center;
+  font-family: arvo;
 }
-
-a:after {
-  content: "";
-  background: @WHITE;
+nav.primary-navigation li a {
+  color: black;
+}
+nav.primary-navigation li a:hover {
+  color: #3ca0e7;
+}
+nav.primary-navigation li:hover {
+  cursor: pointer;
+}
+nav.primary-navigation ul li ul {
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
-  bottom: 5px;
-  left: @GAP;
-  height: 3px;
-  width: 0;
-  transition: 0.5s;
-  transition-delay: 0.2s;
+  padding-left: 0;
+  left: 0;
+  display: none;
+  background: white;
+}
+nav.primary-navigation ul li:hover > ul,
+nav.primary-navigation ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  min-width: 200px;
+  text-align: left;
+  padding-top: 5px;
+  box-shadow: 0px 3px 5px -1px #ccc;
+}
+nav.primary-navigation ul li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+  border-style: none;
+}
+nav.primary-navigation ul li ul li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #3ca0e7;
+  transition: all 0.3s ease;
 }
 
-body {
-  background: @BACKGROUND;
-  font-family: "Varela Round", Nunito, Montserrat, sans-serif;
-  margin: 0;
-  padding: 0;
-  text-transform: capitalize;
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #3CA0E7;
 }
 
+ul li ul li a {
+  transition: all 0.5s ease;
+} */
+
+body {margin:0;}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: 0%;
+	padding: 0px;
+}
+/*top bar start*/
+.topbar {
+	display: flex;
+	background-color:#494949;
+	justify-content: center;
+}
+.topbar-container {
+	display:flex;
+	flex-direction: row;
+	width: 80%;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 2px;
+
+}
+.topbar-col-right {
+	display: flex;
+	flex-direction: row;
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 14px;
+	color: white;
+
+
+}
+
+.login-container {
+	display: flex;
+	flex-direction: row;
+	margin-right: 10px;
+	align-items: center;
+}
+.login-container a {
+	margin: 0 10px;
+		text-decoration: none solid rgb(255, 255, 255);
+		color: white;
+}
+.cart-container a {
+	margin: 0 20px 0 5px;
+		text-decoration: none solid rgb(255, 255, 255);
+		color: white;
+}
+.cart-container {
+	display: flex;
+	align-items: center;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+.search-container input[type=search] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+  border: none;
+}
+/*end of top bar*/
+
+/*low bar start*/
+.lowbar{
+	display: flex;
+	justify-content: center;
+}
+.lowbar-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	margin: 0 10px;
+}
+.logo {
+	margin: 0;
+}
+.logo img{
+	width: 250px;
+	height: 250px;
+}
+/* A simple, css only, (some-what) responsive menu */
+
+ 
 .menu {
-  margin: @GAP;
-  > ol {
-    list-style: none;
-    margin: @GAP * 2 0;
-    padding: 0;
+  display: inline-block;
+  margin:0;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  width: 95%;
+  
 
-    > li {
-      background: darken(@WHITE, 75%);
-      border-left: 5px solid var(--gradient-color);
-      margin-bottom: 1px;
-      position: relative;
-      transition: 0.5s;
-      &:nth-child(1) {
-        --accent-color: @COLOR1;
-        --gradient-color: @COLOR1g;
-      }
-      &:nth-child(2) {
-        --accent-color: @COLOR2;
-        --gradient-color: @COLOR2g;
-      }
-      &:nth-child(3) {
-        --accent-color: @COLOR3;
-        --gradient-color: @COLOR3g;
-      }
-      &:nth-child(4) {
-        --accent-color: @COLOR4;
-        --gradient-color: @COLOR4g;
-      }
-      &:nth-child(5) {
-        --accent-color: @COLOR5;
-        --gradient-color: @COLOR5g;
-      }
-      a {
-        color: @WHITE;
-        display: block;
-        padding: @GAP;
-        position: relative;
-        text-decoration: none;
-        z-index: 1;
-        &:not(:last-child) {
-          &:before {
-            content: "\f078";
-            font-family: fontAwesome;
-            font-size: 0.75em;
-            line-height: 50px;
-            position: absolute;
-            right: 25px;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            transition: 0.5s;
-          }
-        }
-      }
-      &:focus,
-      &:focus-within,
-      &:hover {
-        z-index: 100;
-
-        &:after {
-          background: linear-gradient(
-            to left,
-            var(--accent-color),
-            var(--gradient-color)
-          );
-          max-width: 800px;
-        }
-      }
-      &:focus,
-      &:focus-within {
-        .sub-menu {
-          max-height: 500px;
-        }
-        a:before {
-          transform: rotate(-180deg);
-        }
-      }
-      &:after {
-        background: darken(@WHITE, 75%);
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: 0.5s;
-        max-width: 0;
-        overflow: hidden;
-      }
-    }
-    .sub-menu {
-      border-left: 1px solid @WHITE;
-      margin-left: @GAP*1.5;
-      list-style: none;
-      max-height: 0px;
-      overflow: hidden;
-      padding-left: @GAP / 2;
-      position: relative;
-      transition: 0.5s;
-      z-index: 1;
-      li {
-        font-size: 0.9em;
-        &:hover,
-        a:focus {
-          background: fade(darken(@WHITE, 75%), 30%);
-        }
-        a:after {
-          bottom: 5px;
-          height: 1px;
-        }
-        a:hover,
-        a:focus {
-          &:after {
-            width: 15px;
-          }
-        }
-      }
-    }
-  }
 }
 
-@media (min-width: 600px) {
-  a:focus,
-  a:hover {
-    position: relative;
-    &:after {
-      width: 50px;
-    }
-  }
+/* a little "umph" */
 
-  a:after {
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
 
+}
+
+ul {
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+li {
+  float: left;
+}
+
+/* clear'n floats */
+ul:after {
+  clear: both;
+}
+
+ul:before,
+ul:after {
+    content: " ";
+    display: table;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  /* background: #2B2B2B; */
+  background-image: -webkit-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
+  background-image: -moz-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
+  background-image: -o-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
+  background-image: linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
+  text-align: center;
+  letter-spacing: 1px;
+  /* text-shadow: 1px 1px 1px #0E0E0E;
+  -webkit-box-shadow: 2px 2px 3px #888;
+  -moz-box-shadow: 2px 2px 3px #888;
+  box-shadow: 2px 2px 3px #888; */
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+      font-family:Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* prime */
+ul.primary li a {
+  display: block;
+  padding: 20px 30px;
+  /* border-right: 1px solid #3D3D3D; */
+}
+
+ul.primary li:last-child a {
+  border-right: none;
+}
+
+ul.primary li a:hover {
+  
+  color: #000;
+}
+
+/* sub-menus */
+ul.sub-menu {
+  position: absolute;
+  z-index: 200;
+  box-shadow: 2px 2px 0 #BEBEBE;
+  width: 35%;
+  display:none;
+}
+
+ul.sub-menu li {
+  float: none;
+  margin: 0;
+}
+
+ul.sub-menu li a {
+  border-bottom: 1px dotted #ccc;
+  border-right: none;
+  color: #000;
+  padding: 15px 30px;
+}
+
+ul.sub-menu li:last-child a {
+  border-bottom: none;
+}
+
+ul.sub-menu li a:hover {
+  color: #000;
+  background: #eeeeee;
+}
+
+/* sub-menu display*/
+ul.primary li:hover ul {
+  display: block;
+  background: #fff;
+}
+
+/* keeps the tab background white */
+ul.primary li:hover a {
+  background: #fff;
+  color: #666;
+  text-shadow: none;
+}
+
+ul.primary li:hover > a{
+  color: #000;
+} 
+
+@media only screen and (max-width: 600px) {
+  .decor {
+    padding: 3px;
+  }
+  
   .menu {
-    margin: 0;
-    margin-top: 40vh;
+    width: 100%;
+    margin-top: 0px;
   }
-  .menu > ol {
+  
+   li {
+    float: none;
+  }
+  
+  ul.primary li:hover a {
+    background: none;
+    color: #8B8B8B;
+    text-shadow: 1px 1px #000;
+  }
+
+  ul.primary li:hover ul {
     display: block;
-    max-width: none;
-    text-align: center;
-    > li {
-      border-top: 5px solid var(--accent-color);
-      border-left: 0;
-      display: inline-block;
-      margin-left: -5px;
-      vertical-align: top;
-      width: 120px;
-      &:hover,
-      &:focus,
-      &:focus-within {
-        &:after {
-          background: linear-gradient(
-            to bottom,
-            var(--accent-color),
-            var(--gradient-color)
-          );
-          border-radius: 3px;
-          top: -@GAP;
-          bottom: -@GAP;
-          left: -@GAP;
-          right: -@GAP;
-        }
-
-        .sub-menu {
-          max-height: 750px;
-        }
-      }
-
-      a:not(:last-child) {
-        &:before {
-          right: 12.5px;
-        }
-      }
-
-      &:hover {
-        a:before {
-          transform: rotate(-180deg);
-        }
-      }
-    }
-    .sub-menu {
-      border-left: 0;
-      margin: @GAP -@GAP -@GAP;
-      padding-left: 0;
-    }
+    background: #272727;
+    color: #fff;
   }
-}
-
-@media (min-width: 775px) {
-  .menu > ol {
-    > li {
-      width: 150px;
-
-      a:not(:last-child) {
-        &:before {
-          right: 25px;
-        }
-      }
-    }
+  
+  ul.sub-menu {
+    display: block;  
+    position: static;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  ul.sub-menu li a {
+    background: #272727;
+  	border: none;
+    color: #8B8B8B;
+  }
+  
+  ul.sub-menu li a:hover {
+    color: #ccc;
+    background: none;
   }
 }

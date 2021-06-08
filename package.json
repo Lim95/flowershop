@@ -14,15 +14,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@craco/craco": "^6.1.2",
     "bootstrap-icons": "^1.5.0",
     "if-env": "^1.0.4",
     "less-loader": "^9.0.0",
     "mongodb": "^3.6.6",
     "node-mongo-seeds-atlas": "^1.0.1",
-    "react-bootstrap-icons": "^1.5.0"
+    "react-bootstrap-icons": "^1.5.0",
+    "react-bulma-components": "^4.0.6"
   },
   "devDependencies": {
+    "autoprefixer": "^9.8.6",
     "concurrently": "^5.1.0",
-    "less": "^4.1.1"
+    "less": "^4.1.1",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
