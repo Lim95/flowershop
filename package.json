@@ -14,9 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-icons": "^1.5.0",
     "if-env": "^1.0.4",
     "mongodb": "^3.6.6",
-    "node-mongo-seeds-atlas": "^1.0.1"
+    "node-mongo-seeds-atlas": "^1.0.1",
+    "react-bootstrap-icons": "^1.5.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
