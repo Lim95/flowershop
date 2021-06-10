@@ -1,325 +1,5 @@
- /* * {
-	 box-sizing: border-box;
-   background-color: gray;
-}
- :root {
-	 --accent-color: #45494e;
-	 --gradient-color: #fbfbfb;
-}
- a:focus {
-	 outline: none;
-	 position: relative;
-}
- a:focus:after {
-	 width: 50px;
-}
- a:after {
-	 content: "";
-	 background: #fbfbfb;
-	 position: absolute;
-	 bottom: 5px;
-	 left: 15px;
-	 height: 3px;
-	 width: 0;
-	 transition: 0.5s;
-	 transition-delay: 0.2s;
-}
- body {
-	 background: #45494e;
-	 font-family: "Varela Round", Nunito, Montserrat, sans-serif;
-	 margin: 0;
-	 padding: 0;
-	 text-transform: capitalize;
-}
- .menu {
-	 margin: 15px;
-}
- .menu > ol {
-	 list-style: none;
-	 margin: 30px 0;
-	 padding: 0;
-}
- .menu > ol > li {
-	 background: #3c3c3c;
-	 border-left: 5px solid var(--gradient-color);
-	 margin-bottom: 1px;
-	 position: relative;
-	 transition: 0.5s;
-}
- .menu > ol > li:nth-child(1) {
-	 --accent-color: #fda085;
-	 --gradient-color: #f6d365;
-}
- .menu > ol > li:nth-child(2) {
-	 --accent-color: #bff098;
-	 --gradient-color: #6fd6ff;
-}
- .menu > ol > li:nth-child(3) {
-	 --accent-color: #ea8d8d;
-	 --gradient-color: #a890fe;
-}
- .menu > ol > li:nth-child(4) {
-	 --accent-color: #d8b5ff;
-	 --gradient-color: #1eae98;
-}
- .menu > ol > li:nth-child(5) {
-	 --accent-color: #c6ea8d;
-	 --gradient-color: #fe90af;
-}
- .menu > ol > li a {
-	 color: #fbfbfb;
-	 display: block;
-	 padding: 15px;
-	 position: relative;
-	 text-decoration: none;
-	 z-index: 1;
-}
- .menu > ol > li a:not(:last-child):before {
-	 content: "\f078";
-	 font-family: fontAwesome;
-	 font-size: 0.75em;
-	 line-height: 50px;
-	 position: absolute;
-	 right: 25px;
-	 top: 0;
-	 bottom: 0;
-	 margin: auto;
-	 transition: 0.5s;
-}
- .menu > ol > li:focus, .menu > ol > li:focus-within, .menu > ol > li:hover {
-	 z-index: 100;
-}
- .menu > ol > li:focus:after, .menu > ol > li:focus-within:after, .menu > ol > li:hover:after {
-	 background: linear-gradient(to left,var(--accent-color),var(--gradient-color));
-	 max-width: 800px;
-}
- .menu > ol > li:focus .sub-menu-menu, .menu > ol > li:focus-within .sub-menu-menu {
-	 max-height: 500px;
-}
- .menu > ol > li:focus a:before, .menu > ol > li:focus-within a:before {
-	 transform: rotate(-180deg);
-}
- .menu > ol > li:after {
-	 background: #3c3c3c;
-	 content: "";
-	 position: absolute;
-	 left: 0;
-	 right: 0;
-	 top: 0;
-	 bottom: 0;
-	 transition: 0.5s;
-	 max-width: 0;
-	 overflow: hidden;
-}
- .menu > ol .sub-menu-menu {
-	 border-left: 1px solid #fbfbfb;
-	 margin-left: 22.5px;
-	 list-style: none;
-	 max-height: 0px;
-	 overflow: hidden;
-	 padding-left: 7.5px;
-	 position: relative;
-	 transition: 0.5s;
-	 z-index: 1;
-}
- .menu > ol .sub-menu-menu li {
-	 font-size: 0.9em;
-}
- .menu > ol .sub-menu-menu li:hover, .menu > ol .sub-menu-menu li a:focus {
-	 background: rgba(60,60,60,0.3);
-}
- .menu > ol .sub-menu-menu li a:after {
-	 bottom: 5px;
-	 height: 1px;
-}
- .menu > ol .sub-menu-menu li a:hover:after, .menu > ol .sub-menu-menu li a:focus:after {
-	 width: 15px;
-}
- @media (min-width: 600px) {
-	 a:focus, a:hover {
-		 position: relative;
-	}
-	 a:focus:after, a:hover:after {
-		 width: 50px;
-	}
-	 a:after {
-		 left: 0;
-		 right: 0;
-		 margin: auto;
-	}
-	 .menu {
-		 margin: 0;
+ body {margin:0;}
 
-	}
-	 .menu > ol {
-		 display: block;
-		 max-width: none;
-		 text-align: center;
-	}
-	 .menu > ol > li {
-		 border-top: 5px solid var(--accent-color);
-		 border-left: 0;
-		 display: inline-block;
-		 margin-left: -5px;
-		 vertical-align: top;
-		 width: 120px;
-	}
-	 .menu > ol > li:hover:after, .menu > ol > li:focus:after, .menu > ol > li:focus-within:after {
-		 background: linear-gradient(to bottom,var(--accent-color),var(--gradient-color));
-		 border-radius: 3px;
-		 top: -15px;
-		 bottom: -15px;
-		 left: -15px;
-		 right: -15px;
-	}
-	 .menu > ol > li:hover .sub-menu-menu, .menu > ol > li:focus .sub-menu-menu, .menu > ol > li:focus-within .sub-menu-menu {
-		 max-height: 750px;
-	}
-	 .menu > ol > li a:not(:last-child):before {
-		 right: 12.5px;
-	}
-	 .menu > ol > li:hover a:before {
-		 transform: rotate(-180deg);
-	}
-	 .menu > ol .sub-menu-menu {
-		 border-left: 0;
-		 margin: 15px -15px -15px;
-		 padding-left: 0;
-	}
-}
- @media (min-width: 775px) {
-	 .menu > ol > li {
-		 width: 150px;
-	}
-	 .menu > ol > li a:not(:last-child):before {
-		 right: 25px;
-	}
-}
-            <div className="lowbar-menu-container">
-              <div className="lowbar-menu">
-                <nav className="menu">
-                  <ol>
-                    <li className="menu-item"><a href="/">Home</a></li>
-                    <li className="menu-item">
-                      <a href="/products/all">PRODUCTS</a>
-                      <ol className="sub-menu-menu">
-                        <li><a href="/products/roses">ROSES</a></li>
-                        <li><a href="/products/ftdexclusives">FTD EXCLUSIVES</a></li>
-                        <li><a href="/products/plants">PLANTS</a></li>
-                        <li><a href="/products/bestsellers">BEST SELLERS</a></li>
-                        <li><a href="/products/corporategifts">CORPORATE GIFTS</a></li>
-                        <li><a href="/products/gourmetbaskets">GOURMET BASKETS</a></li>
-                      </ol>
-                    </li>
-                    <li className="menu-item">
-                      <a href="/occasions/all">OCCASIONS</a>
-                      <ol className="sub-menu-menu">
-                        <li><a href="/occasions/anniversary">ANNIVERSARY</a></li>
-                        <li><a href="/occasions/birthday">BIRTHDAY</a></li>
-                        <li><a href="/occasions/loveandromance">LOVE & ROMANCE</a></li>
-                        <li><a href="/occasions/newbaby">NEW BABY</a></li>
-                        <li><a href="/occasions/congratulations">CONGRATULATIONS</a></li>
-                        <li><a href="/occasions/thanks">THANKS</a></li>
-                        <li><a href="/occasions/getwell">GET WELL</a></li>
-                        <li><a href="/occasions/sympathy">SYMPATHY</a></li>
-                        <li><a href="/occasions/wedding">WEDDING</a></li>
-                        <li><a href="/occasions/summber">SUMMER</a></li>
-                        <li><a href="/occasions/graduations">GRADUATIONS</a></li>
-                      </ol>
-                    </li>
-                    <li className="menu-item">
-                      <a href="/about/aboutus">ABOUT US</a>
-                      <ol className="sub-menu-menu">
-                        <li><a href="/about/aboutus">ABOUT US</a></li>
-                        <li><a href="/about/flowers">ABOUT FLOWERS</a></li>
-                        <li><a href="/about/contactus">CONTACT US</a></li>
-                        <li><a href="/about/deliveryinfo">DELIVERY INFO</a></li>
-                        <li><a href="/about/ourguarantee">OUR GUARANTEE</a></li>
-                      </ol>
-                    </li>                  
-                  </ol>
-                </nav>
-              </div>
-            </div> */
-
-/* nav.primary-navigation {
-  margin: 0 auto;
-  display: block;
-  padding: 5px 0 0 0;
-  text-align: center;
-  font-size: 16px;
-}
-nav.primary-navigation ul li {
-  list-style: none;
-  margin: 0 auto;
-  border-left: 2px solid #3ca0e7;
-  display: inline-block;
-  padding: 0 30px;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  font-family: arvo;
-}
-nav.primary-navigation li a {
-  color: black;
-}
-nav.primary-navigation li a:hover {
-  color: #3ca0e7;
-}
-nav.primary-navigation li:hover {
-  cursor: pointer;
-}
-nav.primary-navigation ul li ul {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  padding-left: 0;
-  left: 0;
-  display: none;
-  background: white;
-}
-nav.primary-navigation ul li:hover > ul,
-nav.primary-navigation ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-  min-width: 200px;
-  text-align: left;
-  padding-top: 5px;
-  box-shadow: 0px 3px 5px -1px #ccc;
-}
-nav.primary-navigation ul li ul li {
-  clear: both;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 5px;
-  border-style: none;
-}
-nav.primary-navigation ul li ul li a:hover {
-  padding-left: 10px;
-  border-left: 2px solid #3ca0e7;
-  transition: all 0.3s ease;
-}
-
-a {
-  text-decoration: none;
-}
-a:hover {
-  color: #3CA0E7;
-}
-
-ul li ul li a {
-  transition: all 0.5s ease;
-} */
-
-body {margin:0;}
-
-.container {
-	display: flex;
-	flex-direction: column;
-	margin: 0%;
-	padding: 0px;
-}
 /*top bar start*/
 .topbar {
 	display: flex;
@@ -450,7 +130,7 @@ ul:after {
     display: table;
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: center;
   /* background: #2B2B2B; */
@@ -491,7 +171,7 @@ ul.sub-menu {
   position: absolute;
   z-index: 200;
   box-shadow: 2px 2px 0 #BEBEBE;
-  width: 35%;
+  width: 40%;
   display:none;
 }
 
@@ -576,4 +256,20 @@ ul.primary li:hover > a{
     color: #ccc;
     background: none;
   }
+}
+
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-cont {
+	display:flex;
+	flex-direction: row;
+	width: 80%;
+	justify-content: center;
+	align-items: center;
+	margin: 0 2px;
+
 }
