@@ -1,4 +1,14 @@
- body {margin:0;}
+ :root {
+  --primary: #232F3E;
+  --secondary: #F3A847;
+  --tertiary: #B12704;
+  --light: #fafafa;
+  --dark: #272f32;
+  --error: rgb(228, 46, 1);
+  --spacing-one: calc(1rem * 0.5);
+  --spacing-two: calc(1rem);
+}
+body {margin:0;}
 
 /*top bar start*/
 .topbar {
@@ -71,6 +81,7 @@
 .lowbar{
 	display: flex;
 	justify-content: center;
+  margin-bottom: 20px;
 }
 .lowbar-container {
 	display: flex;
@@ -272,4 +283,37 @@ ul.primary li:hover > a{
 	align-items: center;
 	margin: 0 2px;
 
+}
+
+.popular {
+  margin-top: 20px;
+}
+.popular h2 {
+  font-family:Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 28px;
+}
+
+.popular-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    border: none;
+  background-color: none;
+  border-radius: 0.5rem;
+  margin: 1rem;
+    font-family:Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  text-align: center;
+}
+.product-name {
+  font-weight: bold;
+  vertical-align: bottom;
+
+}
+.product-price {
+  vertical-align: bottom;
+}
+.product-img {
+  vertical-align: middle;
 }
